@@ -1,0 +1,72 @@
+html body {
+  margin: 0;
+}
+
+header {
+  position: relative;
+}
+
+.container {
+  padding: 10px;
+}
+
+.bg-grey {
+  background-color: $grey-light;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+// Nav
+nav {
+  z-index: 999;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 0 5px black;
+}
+
+.nav-name {
+  text-align: center;
+
+  img {
+    padding: 13px;
+
+    /*font-family: Shrikhand, sans-serif !important;
+    font-style: italic;
+    font-weight: 700;*/
+
+  }
+}
+
+//Footer
+footer {
+  @extend .container;
+  background-color: #353535;
+  margin-top: 50px;
+  color: white;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding-bottom: 10px;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  h5 {
+    font-family: Shrikhand, sans-serif;
+    font-size: 1.2em;
+    font-weight: normal;
+  }
+}

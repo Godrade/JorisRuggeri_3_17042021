@@ -1,0 +1,209 @@
+@import url("http://fonts.googleapis.com/css?family=Shrikhand:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400");
+@import url("http://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400");
+.btn, .btn-operation, .btn-explore {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 #2f2f2f4d;
+}
+
+.btn-explore {
+  background: linear-gradient(350deg, #9356dc 0%, #9356dc 20%, #FF79DA 100%);
+  color: white;
+}
+
+.badge, .badge-new {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  margin: 10px;
+  background-color: #99E2D0;
+  color: #2EA386;
+  border-radius: 5px;
+}
+
+html body {
+  margin: 0;
+}
+
+header {
+  position: relative;
+}
+
+.container, footer {
+  padding: 10px;
+}
+
+.bg-grey {
+  background-color: #F6F6F6;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+nav {
+  z-index: 999;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 0 5px black;
+}
+
+.nav-name {
+  text-align: center;
+}
+.nav-name img {
+  padding: 13px;
+  /*font-family: Shrikhand, sans-serif !important;
+  font-style: italic;
+  font-weight: 700;*/
+}
+
+footer {
+  background-color: #353535;
+  margin-top: 50px;
+  color: white;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer ul li {
+  padding-bottom: 10px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #9356dc;
+}
+footer h5 {
+  font-family: Shrikhand, sans-serif;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.locate-zone {
+  text-align: center;
+  background-color: #EAEAEA;
+}
+.locate-zone i {
+  color: #545454;
+}
+.locate-zone p {
+  display: inline-block;
+  font-weight: bolder;
+  padding-left: 10px;
+  color: #545454;
+}
+
+.explore {
+  background-color: #F6F6F6;
+  position: relative;
+  text-align: center;
+  padding: 20px 20px 30px 20px;
+  margin-bottom: 10px;
+}
+.explore h1 {
+  font-size: 1.5em;
+}
+.explore p {
+  font-weight: lighter;
+}
+
+.circle-purple {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  left: -13px;
+}
+.circle-purple .text-circle {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 8px;
+  top: 3px;
+  color: white;
+}
+
+.btn-operation {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+  background-color: #F6F6F6;
+}
+.btn-operation i {
+  color: #545454;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.btn-operation:hover {
+  background-color: #f3ecfc;
+}
+.btn-operation:hover i {
+  color: #9356dc;
+}
+
+.list-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-restaurant .item-restaurant {
+  flex: 1 1 100%;
+  height: 268px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 #2f2f2f4d;
+}
+.list-restaurant .img-item-restaurant {
+  height: 75%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.list-restaurant .img-item-restaurant img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+.list-restaurant .restaurant-content-text {
+  margin: 5px 10px 10px 10px;
+}
+.list-restaurant .restaurant-content-text .restaurant-title {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.list-restaurant .restaurant-content-text .restaurant-desc {
+  margin: 0;
+  font-weight: lighter;
+}
+.list-restaurant .restaurant-content-text .favorite-off, .list-restaurant .restaurant-content-text .favorite-on {
+  float: right;
+  font-size: 1.5em;
+  position: relative;
+  bottom: 31px;
+  right: 15px;
+  color: #545454;
+}
+.list-restaurant .restaurant-content-text .favorite-off:hover, .list-restaurant .restaurant-content-text .favorite-on:hover {
+  display: none;
+}
+.list-restaurant .restaurant-content-text .favorite-off:hover + .favorite-on, .list-restaurant .restaurant-content-text .favorite-on:hover + .favorite-on {
+  display: inline-block;
+}
+.list-restaurant .restaurant-content-text .favorite-on {
+  display: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=style.css.map */
