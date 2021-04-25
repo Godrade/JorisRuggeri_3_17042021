@@ -4,14 +4,14 @@
   background-color: $grey;
 
   i {
-    color: #545454;
+    color: $grey-dark;
   }
 
   p {
     display: inline-block;
     font-weight: bolder;
     padding-left: 10px;
-    color: #545454;
+    color: $grey-dark;
   }
 }
 
@@ -62,7 +62,7 @@
   background-color: $grey-light;
 
   i {
-    color: #545454;
+    color: $grey-dark;
     padding-right: 20px;
     padding-left: 10px;
   }
@@ -80,6 +80,11 @@
 .list-restaurant {
   display: flex;
   flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   .item-restaurant {
     flex: 1 1 100%;
@@ -124,7 +129,7 @@
       position: relative;
       bottom: 31px;
       right: 15px;
-      color: #545454;
+      color: $grey-dark;
 
       &:hover {
         display: none;
@@ -133,6 +138,7 @@
 
     .favorite-off:hover + .favorite-on {
       display: inline-block;
+      animation: favorite 1s linear;
     }
 
     .favorite-on {
@@ -145,3 +151,94 @@
   }
 }
 
+
+//Profil restaurant
+.restaurant-profil {
+  overflow: hidden;
+
+  img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.menu {
+
+  h5 {
+    font-size: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+
+  .under-line {
+    width: 52px;
+    height: 3px;
+    background-color: $tertiary;
+    position: relative;
+    top: 5px;
+  }
+
+  .list-menu {
+    @extend .list-restaurant;
+
+    .item-menu {
+      @extend .item-restaurant;
+
+      height: 38px;
+      padding: 10px;
+      overflow: hidden;
+      position: relative;
+      margin: 20px 0 0 0;
+
+      &:hover {
+        .checked-menu {
+          animation: checked-menu 0.4s linear forwards;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .title-menu {
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .desc-menu {
+        display: inline;
+        font-weight: lighter;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .price-menu {
+        float: right;
+        margin-right: 10px;
+      }
+
+      .checked-menu {
+        height: 100%;
+        background-color: $tertiary;
+        border-radius: 0 10px 10px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        i {
+          color: white;
+          font-size: 1.5em;
+          position: absolute;
+          left: 15px;
+          bottom: 16px;
+        }
+      }
+    }
+  }
+}

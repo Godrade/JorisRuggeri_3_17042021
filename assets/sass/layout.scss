@@ -1,5 +1,6 @@
 html body {
   margin: 0;
+  height: 100vh;
 }
 
 header {
@@ -10,13 +11,88 @@ header {
   padding: 10px;
 }
 
+.container-menu {
+  @extend .container;
+
+  position: relative;
+  bottom: 40px;
+  background-color: white;
+  border-radius: 40px 40px 0 0;
+
+  h3 {
+    font-family: Shrikhand, sans-serif;
+    font-size: 1.5em;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
 .bg-grey {
   background-color: $grey-light;
+  padding-bottom: 50px;
 }
 
 * {
   font-family: Roboto, sans-serif;
 }
+
+//Loader
+.loading-spinner {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  text-align: center;
+  background-color: $primary;
+
+  animation: loader 2s linear forwards;
+
+  h3 {
+    position: relative;
+    top: 30%;
+    font-size: 44px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Shrikhand, sans-serif;
+  }
+
+  p {
+    position: relative;
+    font-family: Roboto, sans-serif;
+    color: white;
+    font-size: 10px;
+    top: 72%;
+  }
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    top: 26%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .spinner {
+    border-radius: 50px;
+    border: 2px solid $secondary;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      bottom: -6px;
+      right: -6px;
+      border-radius: 50px;
+      border: 11px solid transparent;
+      border-top-color: $primary;
+      animation: loader-spinner 1.5s linear;
+    }
+  }
+}
+
 
 // Nav
 nav {
@@ -37,13 +113,21 @@ nav {
     font-weight: 700;*/
 
   }
+
+  i {
+    float: left;
+    position: relative;
+    left: 16px;
+    top: 20px;
+    color: $grey-dark;
+    font-size: 1.4em;
+  }
 }
 
 //Footer
 footer {
   @extend .container;
   background-color: #353535;
-  margin-top: 50px;
   color: white;
 
   ul {

@@ -3,6 +3,8 @@
   margin: 10px;
   padding: 10px;
   border: none;
+  cursor: pointer;
+  transition: 0.4s;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 #2f2f2f4d;
 }
@@ -12,6 +14,11 @@
 
   background: linear-gradient(350deg, $primary 0%, $primary 20%, $secondary 100%);
   color: white;
+
+  &:hover {
+    background: linear-gradient(350deg, lighten($primary, 5%) 0%, lighten($primary, 5%) 20%, lighten($secondary, 5%) 100%);
+    box-shadow: 0 5px 20px 0 #2f2f2f4d;
+  }
 }
 
 
