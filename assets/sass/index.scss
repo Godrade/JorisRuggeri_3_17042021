@@ -122,38 +122,13 @@
       margin: 0;
       font-weight: lighter;
     }
-
-    .favorite-off {
-      float: right;
-      font-size: 1.5em;
-      position: relative;
-      bottom: 31px;
-      right: 15px;
-      color: $grey-dark;
-
-      &:hover {
-        display: none;
-      }
-    }
-
-    .favorite-off:hover + .favorite-on {
-      display: inline-block;
-      animation: favorite 1s linear;
-    }
-
-    .favorite-on {
-      @extend .favorite-off;
-      display: none;
-      background: -webkit-gradient(linear, left top, left bottom, from($primary), to($secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 }
 
 
 //Profil restaurant
 .restaurant-profil {
+  height: 300px;
   overflow: hidden;
 
   img {
@@ -184,23 +159,45 @@
   .list-menu {
     @extend .list-restaurant;
 
+    animation: fadeIn 2s linear;
+
     .item-menu {
       @extend .item-restaurant;
 
       height: 38px;
-      padding: 10px;
+      padding: 10px 0 10px 10px;
+      transition: padding-right 0.3s linear;
       overflow: hidden;
       position: relative;
       margin: 20px 0 0 0;
 
       &:hover {
+        transition: padding-right 0.3s linear;
+        padding-right: 55px;
+
+        .item-info {
+          transition: max-width 0.4s ease-out;
+          max-width: 70%;
+        }
+
         .checked-menu {
-          animation: checked-menu 0.4s linear forwards;
+          transition: width 0.4s ease-out;
+          width: 55px;
+
+          i {
+            transform: rotate(0deg);
+            transition: 0.4s;
+          }
         }
       }
 
       p {
         margin: 0;
+      }
+
+      .item-info {
+        transition: max-width 0.4s ease-out;
+        max-width: 80%;
       }
 
       .title-menu {
@@ -211,25 +208,28 @@
       }
 
       .desc-menu {
-        display: inline;
-        font-weight: lighter;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-size: 0.8em;
       }
 
       .price-menu {
         float: right;
         margin-right: 10px;
+        position: relative;
+        top: -16px;
       }
 
       .checked-menu {
         height: 100%;
         background-color: $tertiary;
         border-radius: 0 10px 10px 0;
+        transition: width 0.4s ease-out;
         position: absolute;
         top: 0;
         right: 0;
+        width: 0;
 
         i {
           color: white;
@@ -237,6 +237,8 @@
           position: absolute;
           left: 15px;
           bottom: 16px;
+          transform: rotate(180deg);
+          transition: 0.4s;
         }
       }
     }

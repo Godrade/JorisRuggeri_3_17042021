@@ -33,16 +33,6 @@
   }
 }
 
-@keyframes checked-menu {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 55px;
-  }
-}
-
 @keyframes loader-spinner {
   0% {
     transform: rotate(0deg);

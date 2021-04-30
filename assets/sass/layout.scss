@@ -11,6 +11,10 @@ header {
   padding: 10px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .container-menu {
   @extend .container;
 
@@ -35,6 +39,35 @@ header {
 * {
   font-family: Roboto, sans-serif;
 }
+
+.heart {
+  .favorite-off {
+    float: right;
+    font-size: 1.5em;
+    position: relative;
+    bottom: 31px;
+    right: 15px;
+    color: $grey-dark;
+
+    &:hover {
+      display: none;
+    }
+  }
+
+  .favorite-off:hover + .favorite-on {
+    display: inline-block;
+    animation: favorite 1s linear;
+  }
+
+  .favorite-on {
+    @extend .favorite-off;
+    display: none;
+    background: -webkit-gradient(linear, left top, left bottom, from($primary), to($secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 
 //Loader
 .loading-spinner {

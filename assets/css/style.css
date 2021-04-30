@@ -56,14 +56,6 @@
     opacity: 1;
   }
 }
-@keyframes checked-menu {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 55px;
-  }
-}
 @keyframes loader-spinner {
   0% {
     transform: rotate(0deg);
@@ -83,6 +75,10 @@ header {
 
 .container, footer, .container-menu {
   padding: 10px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .container-menu {
@@ -105,6 +101,28 @@ header {
 
 * {
   font-family: Roboto, sans-serif;
+}
+
+.heart .favorite-off, .heart .favorite-on {
+  float: right;
+  font-size: 1.5em;
+  position: relative;
+  bottom: 31px;
+  right: 15px;
+  color: #545454;
+}
+.heart .favorite-off:hover, .heart .favorite-on:hover {
+  display: none;
+}
+.heart .favorite-off:hover + .favorite-on, .heart .favorite-on:hover + .favorite-on {
+  display: inline-block;
+  animation: favorite 1s linear;
+}
+.heart .favorite-on {
+  display: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .loading-spinner {
@@ -310,29 +328,9 @@ footer h5 {
   margin: 0;
   font-weight: lighter;
 }
-.list-restaurant .restaurant-content-text .favorite-off, .menu .list-menu .restaurant-content-text .favorite-off, .list-restaurant .restaurant-content-text .favorite-on, .menu .list-menu .restaurant-content-text .favorite-on {
-  float: right;
-  font-size: 1.5em;
-  position: relative;
-  bottom: 31px;
-  right: 15px;
-  color: #545454;
-}
-.list-restaurant .restaurant-content-text .favorite-off:hover, .menu .list-menu .restaurant-content-text .favorite-off:hover, .list-restaurant .restaurant-content-text .favorite-on:hover, .menu .list-menu .restaurant-content-text .favorite-on:hover {
-  display: none;
-}
-.list-restaurant .restaurant-content-text .favorite-off:hover + .favorite-on, .menu .list-menu .restaurant-content-text .favorite-off:hover + .favorite-on, .list-restaurant .restaurant-content-text .favorite-on:hover + .favorite-on, .menu .list-menu .restaurant-content-text .favorite-on:hover + .favorite-on {
-  display: inline-block;
-  animation: favorite 1s linear;
-}
-.list-restaurant .restaurant-content-text .favorite-on, .menu .list-menu .restaurant-content-text .favorite-on {
-  display: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .restaurant-profil {
+  height: 300px;
   overflow: hidden;
 }
 .restaurant-profil img {
@@ -354,18 +352,39 @@ footer h5 {
   position: relative;
   top: 5px;
 }
+.menu .list-menu {
+  animation: fadeIn 2s linear;
+}
 .menu .list-menu .item-menu {
   height: 38px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
+  transition: padding-right 0.3s linear;
   overflow: hidden;
   position: relative;
   margin: 20px 0 0 0;
 }
+.menu .list-menu .item-menu:hover {
+  transition: padding-right 0.3s linear;
+  padding-right: 55px;
+}
+.menu .list-menu .item-menu:hover .item-info {
+  transition: max-width 0.4s ease-out;
+  max-width: 70%;
+}
 .menu .list-menu .item-menu:hover .checked-menu {
-  animation: checked-menu 0.4s linear forwards;
+  transition: width 0.4s ease-out;
+  width: 55px;
+}
+.menu .list-menu .item-menu:hover .checked-menu i {
+  transform: rotate(0deg);
+  transition: 0.4s;
 }
 .menu .list-menu .item-menu p {
   margin: 0;
+}
+.menu .list-menu .item-menu .item-info {
+  transition: max-width 0.4s ease-out;
+  max-width: 80%;
 }
 .menu .list-menu .item-menu .title-menu {
   font-weight: bold;
@@ -374,23 +393,26 @@ footer h5 {
   white-space: nowrap;
 }
 .menu .list-menu .item-menu .desc-menu {
-  display: inline;
-  font-weight: lighter;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 0.8em;
 }
 .menu .list-menu .item-menu .price-menu {
   float: right;
   margin-right: 10px;
+  position: relative;
+  top: -16px;
 }
 .menu .list-menu .item-menu .checked-menu {
   height: 100%;
   background-color: #99E2D0;
   border-radius: 0 10px 10px 0;
+  transition: width 0.4s ease-out;
   position: absolute;
   top: 0;
   right: 0;
+  width: 0;
 }
 .menu .list-menu .item-menu .checked-menu i {
   color: white;
@@ -398,6 +420,25 @@ footer h5 {
   position: absolute;
   left: 15px;
   bottom: 16px;
+  transform: rotate(180deg);
+  transition: 0.4s;
+}
+
+@media screen and (min-width: 767px) {
+  .item-restaurant, .menu .list-menu .item-menu {
+    flex: 1 1 35% !important;
+    margin: 10px;
+  }
+
+  .under-line {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item-restaurant, .menu .list-menu .item-menu {
+    flex: 1 1 20% !important;
+    margin: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
