@@ -40,31 +40,29 @@ header {
   font-family: Roboto, sans-serif;
 }
 
+
 .heart {
-  .favorite-off {
-    float: right;
+  position: relative;
+  
+  .fa-heart {
+    position: absolute;
+    cursor: pointer;
+    color: #cbcbcb;
     font-size: 1.5em;
-    position: relative;
-    bottom: 31px;
+    bottom: 6px;
     right: 15px;
-    color: $grey-dark;
+  }
 
+  .full {
+    opacity: 0;
     &:hover {
-      display: none;
+      transition: opacity 1s ease;
+      opacity: 1;
+      font-weight: bold;
+      background: -webkit-gradient(linear, left top, left bottom, from($primary), to($secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-  }
-
-  .favorite-off:hover + .favorite-on {
-    display: inline-block;
-    animation: favorite 1s linear;
-  }
-
-  .favorite-on {
-    @extend .favorite-off;
-    display: none;
-    background: -webkit-gradient(linear, left top, left bottom, from($primary), to($secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
 

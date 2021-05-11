@@ -50,7 +50,7 @@
 }
 @keyframes favorite {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     opacity: 1;
@@ -103,23 +103,24 @@ header {
   font-family: Roboto, sans-serif;
 }
 
-.heart .favorite-off, .heart .favorite-on {
-  float: right;
-  font-size: 1.5em;
+.heart {
   position: relative;
-  bottom: 31px;
+}
+.heart .fa-heart {
+  position: absolute;
+  cursor: pointer;
+  color: #cbcbcb;
+  font-size: 1.5em;
+  bottom: 6px;
   right: 15px;
-  color: #545454;
 }
-.heart .favorite-off:hover, .heart .favorite-on:hover {
-  display: none;
+.heart .full {
+  opacity: 0;
 }
-.heart .favorite-off:hover + .favorite-on, .heart .favorite-on:hover + .favorite-on {
-  display: inline-block;
-  animation: favorite 1s linear;
-}
-.heart .favorite-on {
-  display: none;
+.heart .full:hover {
+  transition: opacity 1s ease;
+  opacity: 1;
+  font-weight: bold;
   background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#FF79DA));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -339,6 +340,18 @@ footer h5 {
   object-fit: cover;
 }
 
+.menu {
+  opacity: 0;
+}
+.menu.appetizer {
+  animation: fadeIn 2s linear forwards;
+}
+.menu.dish {
+  animation: fadeIn 2s linear 0.5s forwards;
+}
+.menu.dessert {
+  animation: fadeIn 2s linear 1s forwards;
+}
 .menu h5 {
   font-size: 20px;
   margin: 0;
@@ -351,9 +364,6 @@ footer h5 {
   background-color: #99E2D0;
   position: relative;
   top: 5px;
-}
-.menu .list-menu {
-  animation: fadeIn 2s linear;
 }
 .menu .list-menu .item-menu {
   height: 38px;

@@ -138,8 +138,20 @@
   }
 }
 
-
 .menu {
+  opacity: 0;
+
+  &.appetizer {
+    animation: fadeIn 2s linear forwards;
+  }
+
+  &.dish {
+    animation: fadeIn 2s linear 0.5s forwards;
+  }
+
+  &.dessert {
+    animation: fadeIn 2s linear 1s forwards;
+  }
 
   h5 {
     font-size: 20px;
@@ -158,8 +170,6 @@
 
   .list-menu {
     @extend .list-restaurant;
-
-    animation: fadeIn 2s linear;
 
     .item-menu {
       @extend .item-restaurant;
